@@ -1,8 +1,11 @@
 import javax.swing.JFrame;
+import java.awt.Color;
 
 public class RectangleViewer
 {
-   public static void main(String[] args)
+
+   final static int ANIMATION_TIME_IN_SECONDS = 60;
+   public static void main(String[] args) throws InterruptedException
    {
       JFrame frame = new JFrame();
 
@@ -21,6 +24,12 @@ public class RectangleViewer
 
    	  FaceComponent component3 = new FaceComponent();
    	  frame.add(component3);
+ 	  frame.setVisible(true);
 
+ 	  for(int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++)
+ 	  {
+		  component.nextFrame(seconds);
+		  Thread.sleep(1000);
+	  }
    }
 }

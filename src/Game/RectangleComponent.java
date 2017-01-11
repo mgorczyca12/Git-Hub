@@ -4,11 +4,13 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import javax.swing.*;
+import java.awt.Color;
 
 public class RectangleComponent extends JComponent{
 
 	int x,y,w,h;
 	Rectangle box;
+	Color c;
 
 	public RectangleComponent() {
 		this.x = 5;
@@ -30,7 +32,7 @@ public class RectangleComponent extends JComponent{
 	   {
 	      // Recover Graphics2D
 	      Graphics2D g2 = (Graphics2D) g;
-
+		 g2.setColor(c);
 	      // Construct a rectangle and draw it
 	      //Rectangle box = new Rectangle(5, 10, 20, 30);
 	      g2.draw(box);
@@ -42,12 +44,19 @@ public class RectangleComponent extends JComponent{
 	      g2.draw(box);
 	   }
 
-	 public void nextFrame()
+	 public void nextFrame(int seconds)
 	 {
-		 for(i = 50; i <= 100; i++)
-	 	 {
 
-		 }
+		 if(seconds % 2 == 0)
+		 {
+			 c = Color.BLACK;
+	 	 }
+	 	 else
+	 	 	 c = Color.YELLOW;
+
+		 box.translate(10, 10);
+
+		 repaint();
 
 	 }
 
