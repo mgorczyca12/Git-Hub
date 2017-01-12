@@ -11,7 +11,6 @@ public class FaceComponent extends JComponent
 	public void paintComponent (Graphics g) {
 
 		Graphics2D g2 = (Graphics2D) g;
-
 		Ellipse2D.Double head = new Ellipse2D.Double(5, 10, 100, 150);
 		g2.draw(head);
 
