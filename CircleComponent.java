@@ -22,8 +22,11 @@ public class CircleComponent extends JComponent
 
 	public void paintComponent(Graphics g)
 	{
+		for(int i = 0; i < 100; i++)
+		{
 			Graphics2D g2 = (Graphics2D) g;
 			g2.draw(circle1);
+		}
 	}
 
 	public int getD()
